@@ -5,7 +5,6 @@ const user = require('./config');
   const USERNAME_SELECTOR = '#userNameInput';
   const PASSWORD_SELECTOR = '#passwordInput';
   const BUTTON_SELECTOR = '#submitButton';
-  const NAV_OPEN_BUTTON = '.dropdown-toggle';
 
   const browser = await puppeteer.launch({
     headless: false,
@@ -28,8 +27,6 @@ const user = require('./config');
 
   await minhaUbi.goto('https://academicos.ubi.pt/alunos/inscricaoturnos.aspx');
   await minhaUbi.waitForNavigation({ waitUntil: 'networkidle0' });
-
-  await minhaUbi.screenshot({ path: 'example.png' });
 
   await browser.close();
 })();
